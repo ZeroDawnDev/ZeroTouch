@@ -1,65 +1,475 @@
-import Image from "next/image";
+"use client";
+
+import NeuralBackground from "./components/NeuralBackground";
+import Globe from "./components/Globe";
+
+import { motion } from "framer-motion";
+import { QRCodeSVG } from "qrcode.react";
 
 export default function Home() {
+
+  const quickLinks = [
+    {
+      title: "Resume",
+      desc: "View / Download",
+    },
+    {
+      title: "GitHub",
+      desc: "Check out my code",
+    },
+    {
+      title: "Projects",
+      desc: "My work & demos",
+    },
+    {
+      title: "Contact",
+      desc: "Let's connect",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-black text-white overflow-hidden relative">
+
+     
+      {/* BACKGROUND */}
+      <NeuralBackground />
+
+      {/* NAVBAR */}
+      <nav className="
+        fixed top-0 left-0 w-full z-50
+        backdrop-blur-xl
+        bg-black/30
+        border-b border-white/5
+      ">
+
+        <div className="
+          max-w-7xl mx-auto
+          px-6 py-4
+          flex items-center justify-between
+        ">
+
+          <div className="
+            w-12 h-12
+            rounded-full
+            border border-purple-500/40
+            flex items-center justify-center
+            font-bold
+            text-lg
+            bg-white/5
+          ">
+            A
+          </div>
+
+          <button className="text-purple-400 text-2xl">
+            ☰
+          </button>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+      </nav>
+
+      {/* HERO */}
+      <section className="
+        relative z-10
+        px-6
+        pt-36
+        pb-24
+      ">
+
+        <div className="
+          max-w-7xl
+          mx-auto
+          grid lg:grid-cols-2
+          gap-16
+          items-center
+        ">
+
+          {/* LEFT */}
+          <div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-gray-400 mb-3"
+            >
+              Hello, I'm
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="
+                text-5xl
+                md:text-7xl
+                font-bold
+                tracking-tight
+                text-purple-400
+              "
+            >
+              Allen Adhvaith
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="
+                text-2xl
+                md:text-3xl
+                mt-4
+                font-medium
+              "
+            >
+              AI Engineer & Developer
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="
+                text-gray-400
+                mt-8
+                leading-relaxed
+                text-lg
+                max-w-xl
+              "
+            >
+              I build intelligent systems,
+              AI-powered experiences,
+              and meaningful digital products
+              that solve real-world problems.
+            </motion.p>
+
+            {/* BUTTONS */}
+            <div className="flex flex-wrap gap-4 mt-10">
+
+              <a
+                href="/resume.pdf"
+                download
+                className="
+                  px-6 py-3
+                  rounded-xl
+                  bg-purple-600
+                  hover:bg-purple-500
+                  transition
+                  shadow-[0_0_25px_rgba(168,85,247,0.45)]
+                "
+              >
+                View Resume →
+              </a>
+
+              <a
+                href="https://github.com/ZeroDawnDev"
+                target="_blank"
+                className="
+                  px-6 py-3
+                  rounded-xl
+                  border border-white/10
+                  hover:border-purple-500
+                  transition
+                  backdrop-blur-xl
+                  bg-white/5
+                "
+              >
+                GitHub
+              </a>
+
+            </div>
+
+            {/* EXPLORE */}
+            <div className="mt-16">
+
+              <p className="
+                text-sm
+                tracking-[0.3em]
+                text-purple-400
+                mb-6
+              ">
+                EXPLORE
+              </p>
+
+              <div className="
+                grid grid-cols-2
+                md:grid-cols-4
+                gap-4
+              ">
+
+                {quickLinks.map((item) => (
+
+                  <motion.div
+                    key={item.title}
+
+                    whileHover={{
+                      y: -5,
+                    }}
+
+                    className="
+                      p-5
+                      rounded-2xl
+                      bg-white/5
+                      border border-white/10
+                      backdrop-blur-xl
+                      hover:border-purple-500/40
+                      transition
+                    "
+                  >
+
+                    <h3 className="font-semibold">
+                      {item.title}
+                    </h3>
+
+                    <p className="
+                      text-sm
+                      text-gray-400
+                      mt-2
+                    ">
+                      {item.desc}
+                    </p>
+
+                  </motion.div>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="relative flex justify-center">
+
+            {/* GLOW */}
+            <div
+              className="
+                absolute
+                w-[700px]
+                h-[700px]
+                bg-purple-500/20
+                blur-[140px]
+                rounded-full
+              "
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            {/* GLOBE */}
+            <div className="
+              relative
+              z-10
+              w-full
+              max-w-[650px]
+            ">
+              <Globe />
+            </div>
+
+          </div>
+
         </div>
-      </main>
-    </div>
+
+      </section>
+
+      {/* PROJECTS */}
+      <section
+        id="projects"
+        className="
+          px-6
+          pb-32
+          relative z-10
+        "
+      >
+
+        <div className="max-w-7xl mx-auto">
+
+          <h2 className="
+            text-sm
+            tracking-[0.3em]
+            text-purple-400
+            mb-10
+          ">
+            FEATURED PROJECTS
+          </h2>
+
+          <div className="
+            grid md:grid-cols-2
+            gap-8
+          ">
+
+            {/* PROJECT */}
+            <motion.div
+              whileHover={{ y: -5 }}
+
+              className="
+                rounded-3xl
+                overflow-hidden
+                bg-white/5
+                border border-white/10
+                backdrop-blur-xl
+                hover:border-purple-500/40
+                transition
+              "
+            >
+
+              <div className="
+                h-56
+                bg-gradient-to-br
+                from-purple-900/40
+                to-black
+              " />
+
+              <div className="p-8">
+
+                <h3 className="text-2xl font-semibold">
+                  GAIA Assistant
+                </h3>
+
+                <p className="
+                  text-gray-400
+                  mt-4
+                  leading-relaxed
+                ">
+                  AI voice assistant using
+                  Whisper, PPO reinforcement learning,
+                  and intelligent automation.
+                </p>
+
+              </div>
+
+            </motion.div>
+
+            {/* PROJECT */}
+            <motion.div
+              whileHover={{ y: -5 }}
+
+              className="
+                rounded-3xl
+                overflow-hidden
+                bg-white/5
+                border border-white/10
+                backdrop-blur-xl
+                hover:border-purple-500/40
+                transition
+              "
+            >
+
+              <div className="
+                h-56
+                bg-gradient-to-br
+                from-blue-900/30
+                to-black
+              " />
+
+              <div className="p-8">
+
+                <h3 className="text-2xl font-semibold">
+                  Zero Dawn Portfolio
+                </h3>
+
+                <p className="
+                  text-gray-400
+                  mt-4
+                  leading-relaxed
+                ">
+                  Futuristic interactive portfolio
+                  integrating NFC technology,
+                  3D graphics, and AI aesthetics.
+                </p>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CONTACT */}
+      <section className="
+        px-6
+        pb-32
+        relative z-10
+      ">
+
+        <div className="
+          max-w-4xl
+          mx-auto
+          rounded-3xl
+          p-12
+          text-center
+          backdrop-blur-xl
+          bg-white/5
+          border border-white/10
+        ">
+
+          <h2 className="
+            text-4xl
+            font-bold
+            mb-6
+          ">
+            Connect
+          </h2>
+
+          <p className="
+            text-gray-400
+            mb-10
+          ">
+            Tap the NFC card or scan the QR code.
+          </p>
+
+          {/* QR */}
+          <div className="flex justify-center mb-10">
+
+            <QRCodeSVG
+              value="https://zerodawn.dev"
+              size={160}
+            />
+
+          </div>
+
+          {/* BUTTONS */}
+          <div className="
+            flex flex-wrap
+            justify-center
+            gap-4
+          ">
+
+            <a
+              href="/resume.pdf"
+              download
+              className="
+                px-6 py-3
+                rounded-xl
+                bg-purple-600
+                hover:bg-purple-500
+                transition
+              "
+            >
+              Download Resume
+            </a>
+
+            <a
+              href="/contact.vcf"
+              download
+              className="
+                px-6 py-3
+                rounded-xl
+                border border-white/10
+                hover:border-purple-500
+                transition
+              "
+            >
+              Save Contact
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
   );
 }
