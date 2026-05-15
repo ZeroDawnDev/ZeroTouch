@@ -1,6 +1,8 @@
 "use client";
 
 import NeuralBackground from "./components/NeuralBackground";
+import RunicBackground from "./components/RunicBackground";
+import NoiseOverlay from "./components/NoiseOverlay";
 import Globe from "./components/Globe";
 
 import { motion } from "framer-motion";
@@ -15,11 +17,11 @@ export default function Home() {
     },
     {
       title: "GitHub",
-      desc: "Check out my code",
+      desc: "Explore my code",
     },
     {
       title: "Projects",
-      desc: "My work & demos",
+      desc: "Featured work",
     },
     {
       title: "Contact",
@@ -30,239 +32,346 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden relative">
 
-     
-      {/* BACKGROUND */}
+      {/* BACKGROUNDS */}
       <NeuralBackground />
+      <RunicBackground />
+      <NoiseOverlay />
+
+      {/* GLOBAL PURPLE ATMOSPHERE */}
+      <div
+        className="
+          fixed inset-0 z-[1]
+          bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.18),transparent_65%)]
+          pointer-events-none
+        "
+      />
 
       {/* NAVBAR */}
-      <nav className="
-        fixed top-0 left-0 w-full z-50
-        backdrop-blur-xl
-        bg-black/30
-        border-b border-white/5
-      ">
+      <nav
+        className="
+          fixed top-0 left-0 w-full z-50
+          backdrop-blur-xl
+          bg-black/20
+          border-b border-purple-500/10
+        "
+      >
+        <div
+          className="
+            max-w-7xl mx-auto
+            px-6 py-5
+            flex items-center justify-between
+          "
+        >
 
-        <div className="
-          max-w-7xl mx-auto
-          px-6 py-4
-          flex items-center justify-between
-        ">
+          {/* LOGO */}
+          <div className="flex items-center gap-4">
 
-          <div className="
-            w-12 h-12
-            rounded-full
-            border border-purple-500/40
-            flex items-center justify-center
-            font-bold
-            text-lg
-            bg-white/5
-          ">
-            A
+            <div
+              className="
+                w-14 h-14
+                rounded-full
+                border border-purple-500/30
+                flex items-center justify-center
+                bg-black/40
+                text-xl font-bold
+                shadow-[0_0_20px_rgba(168,85,247,0.35)]
+              "
+            >
+              A
+            </div>
+
+            <div className="tracking-[0.45em] text-sm text-white/90">
+              ALLEN
+            </div>
+
           </div>
 
-          <button className="text-purple-400 text-2xl">
-            ☰
-          </button>
+          {/* MENU */}
+          <div className="hidden md:flex items-center gap-12 text-sm text-white/70">
+
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">TECH</a>
+            <a href="#">CONTACT</a>
+
+          </div>
+
+          {/* BUTTON */}
+          <a
+            href="/resume.pdf"
+            download
+            className="
+              hidden md:flex
+              px-5 py-3
+              rounded-xl
+              border border-purple-500/30
+              bg-purple-500/10
+              backdrop-blur-xl
+              hover:bg-purple-500/20
+              transition
+              shadow-[0_0_25px_rgba(168,85,247,0.25)]
+            "
+          >
+            GET RESUME →
+          </a>
 
         </div>
-
       </nav>
 
       {/* HERO */}
-      <section className="
-        relative z-10
-        px-6
-        pt-36
-        pb-24
-      ">
+      <section
+        className="
+          relative z-10
+          min-h-screen
+          flex items-center
+          px-6
+          pt-32
+        "
+      >
 
-        <div className="
-          max-w-7xl
-          mx-auto
-          grid lg:grid-cols-2
-          gap-16
-          items-center
-        ">
+        <div
+          className="
+            max-w-7xl mx-auto
+            grid lg:grid-cols-2
+            gap-20
+            items-center
+            w-full
+          "
+        >
 
           {/* LEFT */}
           <div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-gray-400 mb-3"
+            {/* SMALL RUNIC TEXT */}
+            <p
+              className="
+                text-purple-400/70
+                tracking-[0.45em]
+                text-xs
+                mb-6
+              "
             >
-              Hello, I'm
-            </motion.p>
+              ᚨ ᚱ ᚲ ᛞ ᛟ ᚹ
+            </p>
 
+            {/* TITLE */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+
               className="
-                text-5xl
-                md:text-7xl
-                font-bold
-                tracking-tight
-                text-purple-400
+                text-7xl
+                md:text-[9rem]
+                font-black
+                tracking-[-0.06em]
+                leading-[0.9]
+                bg-gradient-to-b
+                from-white
+                via-purple-200
+                to-purple-400
+                bg-clip-text
+                text-transparent
               "
             >
-              Allen Adhvaith
+              ALLEN
             </motion.h1>
 
+            {/* SUBTITLE */}
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
+
               className="
-                text-2xl
-                md:text-3xl
                 mt-4
-                font-medium
+                text-2xl
+                tracking-[0.25em]
+                text-purple-300
+                font-light
               "
             >
-              AI Engineer & Developer
+              AI ENGINEER & DEVELOPER
             </motion.h2>
 
+            {/* DESCRIPTION */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
+
               className="
-                text-gray-400
-                mt-8
-                leading-relaxed
-                text-lg
+                mt-10
                 max-w-xl
+                text-gray-400
+                text-lg
+                leading-relaxed
               "
             >
-              I build intelligent systems,
-              AI-powered experiences,
-              and meaningful digital products
-              that solve real-world problems.
+              Building intelligent systems, immersive neural interfaces,
+              AI-powered experiences, NFC identity systems,
+              and futuristic digital products.
             </motion.p>
 
             {/* BUTTONS */}
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="flex flex-wrap gap-5 mt-12">
 
               <a
                 href="/resume.pdf"
                 download
                 className="
-                  px-6 py-3
+                  px-7 py-4
                   rounded-xl
                   bg-purple-600
                   hover:bg-purple-500
                   transition
-                  shadow-[0_0_25px_rgba(168,85,247,0.45)]
+                  shadow-[0_0_40px_rgba(168,85,247,0.45)]
                 "
               >
-                View Resume →
+                EXPLORE →
               </a>
 
               <a
                 href="https://github.com/ZeroDawnDev"
                 target="_blank"
                 className="
-                  px-6 py-3
+                  px-7 py-4
                   rounded-xl
-                  border border-white/10
-                  hover:border-purple-500
-                  transition
+                  border border-purple-500/20
+                  bg-white/[0.03]
                   backdrop-blur-xl
-                  bg-white/5
+                  hover:border-purple-500/40
+                  transition
                 "
               >
-                GitHub
+                GITHUB →
               </a>
 
             </div>
 
-            {/* EXPLORE */}
-            <div className="mt-16">
+            {/* QUICK LINKS */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-24">
 
-              <p className="
-                text-sm
-                tracking-[0.3em]
-                text-purple-400
-                mb-6
-              ">
-                EXPLORE
-              </p>
+              {quickLinks.map((item) => (
 
-              <div className="
-                grid grid-cols-2
-                md:grid-cols-4
-                gap-4
-              ">
+                <motion.div
+                  key={item.title}
+                  whileHover={{
+                    y: -5,
+                    scale: 1.02,
+                  }}
 
-                {quickLinks.map((item) => (
+                  className="
+                    p-6
+                    rounded-3xl
+                    bg-white/[0.03]
+                    border border-purple-500/10
+                    backdrop-blur-xl
+                    hover:border-purple-500/30
+                    transition
+                    shadow-[0_0_25px_rgba(168,85,247,0.08)]
+                  "
+                >
 
-                  <motion.div
-                    key={item.title}
+                  <h3 className="font-semibold text-lg">
+                    {item.title}
+                  </h3>
 
-                    whileHover={{
-                      y: -5,
-                    }}
+                  <p className="text-sm text-gray-500 mt-3 leading-relaxed">
+                    {item.desc}
+                  </p>
 
-                    className="
-                      p-5
-                      rounded-2xl
-                      bg-white/5
-                      border border-white/10
-                      backdrop-blur-xl
-                      hover:border-purple-500/40
-                      transition
-                    "
-                  >
+                </motion.div>
 
-                    <h3 className="font-semibold">
-                      {item.title}
-                    </h3>
-
-                    <p className="
-                      text-sm
-                      text-gray-400
-                      mt-2
-                    ">
-                      {item.desc}
-                    </p>
-
-                  </motion.div>
-
-                ))}
-
-              </div>
+              ))}
 
             </div>
 
           </div>
 
           {/* RIGHT */}
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center items-center">
 
-            {/* GLOW */}
+            {/* VERTICAL ENERGY BEAM */}
+            <div
+              className="
+                absolute
+                h-[1000px]
+                w-[3px]
+                bg-gradient-to-b
+                from-transparent
+                via-purple-500/50
+                to-transparent
+                blur-sm
+              "
+            />
+
+            {/* GLOW ORB */}
             <div
               className="
                 absolute
                 w-[700px]
                 h-[700px]
-                bg-purple-500/20
-                blur-[140px]
                 rounded-full
+                bg-purple-500/10
+                blur-[140px]
               "
             />
 
+            {/* OUTER RINGS */}
+            <div className="absolute inset-0 flex items-center justify-center">
+
+              <div
+                className="
+                  absolute
+                  w-[520px]
+                  h-[520px]
+                  rounded-full
+                  border border-purple-500/10
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  w-[680px]
+                  h-[680px]
+                  rounded-full
+                  border border-purple-500/5
+                "
+              />
+
+            </div>
+
             {/* GLOBE */}
-            <div className="
-              relative
-              z-10
-              w-full
-              max-w-[650px]
-            ">
+            <div className="relative z-10 w-full max-w-[700px]">
               <Globe />
             </div>
+
+            {/* HOLOGRAM PLATFORM */}
+            <div
+              className="
+                absolute
+                bottom-[-70px]
+                w-[520px]
+                h-[120px]
+                rounded-full
+                border border-purple-500/20
+                blur-sm
+              "
+            />
+
+            <div
+              className="
+                absolute
+                bottom-[-85px]
+                w-[650px]
+                h-[160px]
+                rounded-full
+                border border-purple-500/10
+              "
+            />
 
           </div>
 
@@ -271,114 +380,74 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section
-        id="projects"
-        className="
-          px-6
-          pb-32
-          relative z-10
-        "
-      >
+      <section className="relative z-10 px-6 pb-32">
 
         <div className="max-w-7xl mx-auto">
 
-          <h2 className="
-            text-sm
-            tracking-[0.3em]
-            text-purple-400
-            mb-10
-          ">
-            FEATURED PROJECTS
-          </h2>
+          <p
+            className="
+              text-sm
+              tracking-[0.4em]
+              text-purple-400
+              mb-12
+            "
+          >
+            FEATURED SYSTEMS
+          </p>
 
-          <div className="
-            grid md:grid-cols-2
-            gap-8
-          ">
+          <div className="grid md:grid-cols-2 gap-8">
 
-            {/* PROJECT */}
-            <motion.div
-              whileHover={{ y: -5 }}
+            {[
+              {
+                title: "GAIA Assistant",
+                desc: "Voice-driven AI assistant powered by reinforcement learning, neural interactions, and intelligent automation.",
+              },
+              {
+                title: "Zero Dawn NFC",
+                desc: "Interactive NFC portfolio identity system with futuristic UI, networking, and immersive digital presence.",
+              },
+            ].map((project) => (
 
-              className="
-                rounded-3xl
-                overflow-hidden
-                bg-white/5
-                border border-white/10
-                backdrop-blur-xl
-                hover:border-purple-500/40
-                transition
-              "
-            >
+              <motion.div
+                key={project.title}
+                whileHover={{ y: -5 }}
 
-              <div className="
-                h-56
-                bg-gradient-to-br
-                from-purple-900/40
-                to-black
-              " />
+                className="
+                  rounded-3xl
+                  overflow-hidden
+                  bg-white/[0.03]
+                  border border-purple-500/10
+                  backdrop-blur-xl
+                  hover:border-purple-500/30
+                  transition
+                "
+              >
 
-              <div className="p-8">
+                <div
+                  className="
+                    h-64
+                    bg-gradient-to-br
+                    from-purple-900/30
+                    via-black
+                    to-black
+                  "
+                />
 
-                <h3 className="text-2xl font-semibold">
-                  GAIA Assistant
-                </h3>
+                <div className="p-8">
 
-                <p className="
-                  text-gray-400
-                  mt-4
-                  leading-relaxed
-                ">
-                  AI voice assistant using
-                  Whisper, PPO reinforcement learning,
-                  and intelligent automation.
-                </p>
+                  <h3 className="text-3xl font-semibold">
+                    {project.title}
+                  </h3>
 
-              </div>
+                  <p className="text-gray-500 mt-4 leading-relaxed">
+                    {project.desc}
+                  </p>
 
-            </motion.div>
+                </div>
 
-            {/* PROJECT */}
-            <motion.div
-              whileHover={{ y: -5 }}
+              </motion.div>
 
-              className="
-                rounded-3xl
-                overflow-hidden
-                bg-white/5
-                border border-white/10
-                backdrop-blur-xl
-                hover:border-purple-500/40
-                transition
-              "
-            >
-
-              <div className="
-                h-56
-                bg-gradient-to-br
-                from-blue-900/30
-                to-black
-              " />
-
-              <div className="p-8">
-
-                <h3 className="text-2xl font-semibold">
-                  Zero Dawn Portfolio
-                </h3>
-
-                <p className="
-                  text-gray-400
-                  mt-4
-                  leading-relaxed
-                ">
-                  Futuristic interactive portfolio
-                  integrating NFC technology,
-                  3D graphics, and AI aesthetics.
-                </p>
-
-              </div>
-
-            </motion.div>
+            ))}
 
           </div>
 
@@ -387,81 +456,86 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className="
-        px-6
-        pb-32
-        relative z-10
-      ">
+      <section className="relative z-10 px-6 pb-32">
 
-        <div className="
-          max-w-4xl
-          mx-auto
-          rounded-3xl
-          p-12
-          text-center
-          backdrop-blur-xl
-          bg-white/5
-          border border-white/10
-        ">
+        <div
+          className="
+            max-w-4xl mx-auto
+            rounded-[2rem]
+            p-14
+            text-center
+            backdrop-blur-xl
+            bg-white/[0.03]
+            border border-purple-500/10
+            shadow-[0_0_40px_rgba(168,85,247,0.08)]
+          "
+        >
 
-          <h2 className="
-            text-4xl
-            font-bold
-            mb-6
-          ">
-            Connect
+          <p className="text-purple-400 tracking-[0.4em] text-sm mb-6">
+            CONNECT
+          </p>
+
+          <h2 className="text-6xl font-black tracking-tight">
+            ENTER THE NETWORK
           </h2>
 
-          <p className="
-            text-gray-400
-            mb-10
-          ">
-            Tap the NFC card or scan the QR code.
+          <p className="text-gray-500 mt-8 mb-12 text-lg">
+            Tap the NFC card or scan the quantum glyph.
           </p>
 
           {/* QR */}
-          <div className="flex justify-center mb-10">
+          <div className="flex justify-center mb-12">
 
-            <QRCodeSVG
-              value="https://zerodawn.dev"
-              size={160}
-            />
+            <div
+              className="
+                p-6
+                rounded-3xl
+                border border-purple-500/20
+                bg-black/30
+                shadow-[0_0_35px_rgba(168,85,247,0.2)]
+              "
+            >
+
+              <QRCodeSVG
+                value="https://zerodawn.dev"
+                size={180}
+                bgColor="transparent"
+                fgColor="#c084fc"
+              />
+
+            </div>
 
           </div>
 
           {/* BUTTONS */}
-          <div className="
-            flex flex-wrap
-            justify-center
-            gap-4
-          ">
+          <div className="flex flex-wrap justify-center gap-5">
 
             <a
               href="/resume.pdf"
               download
               className="
-                px-6 py-3
+                px-7 py-4
                 rounded-xl
                 bg-purple-600
                 hover:bg-purple-500
                 transition
               "
             >
-              Download Resume
+              DOWNLOAD RESUME
             </a>
 
             <a
               href="/contact.vcf"
               download
               className="
-                px-6 py-3
+                px-7 py-4
                 rounded-xl
-                border border-white/10
-                hover:border-purple-500
+                border border-purple-500/20
+                hover:border-purple-500/40
                 transition
               "
             >
-              Save Contact
+              SAVE CONTACT
             </a>
 
           </div>

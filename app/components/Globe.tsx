@@ -33,7 +33,8 @@ function GlobeMesh() {
 
     const positions: number[] = [];
 
-    for (let i = 0; i < 450; i++) {
+    /* REDUCED FOR STABILITY */
+    for (let i = 0; i < 220; i++) {
 
       const radius = 2;
 
@@ -57,14 +58,14 @@ function GlobeMesh() {
 
   }, []);
 
-  /* PARTICLE ARRAY */
+  /* FLOAT ARRAY */
   const pointArray = useMemo(() => {
 
     return new Float32Array(particlePositions);
 
   }, [particlePositions]);
 
-  /* CONNECTION LINES */
+  /* CONNECTIONS */
   const connections = useMemo(() => {
 
     const lines: [number, number, number][][] = [];
@@ -87,8 +88,8 @@ function GlobeMesh() {
           (az - bz) ** 2
         );
 
-        /* CONNECT CLOSE NODES */
-        if (distance < 0.45) {
+        /* LIMITED CONNECTIONS */
+        if (distance < 0.42 && lines.length < 1400) {
 
           lines.push([
             [ax, ay, az] as [number, number, number],
@@ -111,17 +112,17 @@ function GlobeMesh() {
       {/* OUTER AURA */}
       <mesh>
 
-        <sphereGeometry args={[2.3, 64, 64]} />
+        <sphereGeometry args={[2.25, 64, 64]} />
 
         <meshBasicMaterial
           color="#9333ea"
           transparent
-          opacity={0.008}
+          opacity={0.004}
         />
 
       </mesh>
 
-      {/* CONNECTIONS */}
+      {/* CONNECTION LINES */}
       <group
         ref={linesRef}
         frustumCulled={false}
@@ -132,10 +133,9 @@ function GlobeMesh() {
           <Line
             key={index}
             points={line}
-            color="#9333ea"
+            color="#c084fc"
             transparent
-            opacity={0.08}
-            lineWidth={0.2}
+            opacity={0.35}
           />
 
         ))}
@@ -152,8 +152,8 @@ function GlobeMesh() {
 
         <PointMaterial
           transparent
-          color="#d8b4fe"
-          size={0.025}
+          color="#f5d0fe"
+          size={0.018}
           sizeAttenuation
           depthWrite={false}
         />
@@ -168,7 +168,7 @@ function GlobeMesh() {
         <meshBasicMaterial
           color="#7c3aed"
           transparent
-          opacity={0.015}
+          opacity={0.012}
         />
 
       </mesh>
@@ -194,11 +194,11 @@ export default function Globe() {
       >
 
         {/* LIGHTING */}
-        <ambientLight intensity={0.7} />
+        <ambientLight intensity={0.65} />
 
         <pointLight
           position={[10, 10, 10]}
-          intensity={1}
+          intensity={0.9}
           color="#9333ea"
         />
 
