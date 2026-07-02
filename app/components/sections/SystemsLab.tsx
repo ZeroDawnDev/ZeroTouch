@@ -7,13 +7,24 @@ import GAIADeepView from "./GAIADeepView";
 import DistillerSystemView from "./DistillerSystemView";
 
 type SystemKey = "gaia" | "distiller";
+type System = {
+  name: string;
+  type: string;
+  status: string;
+  description: string;
+  highlights: string[];
+  meta?: {
+    visibleModules: number;
+    hiddenModules: number;
+  };
+};
 
 export default function SystemsLab() {
   const [active, setActive] = useState<SystemKey>("gaia");
   const [openGAIA, setOpenGAIA] = useState(false);
   const [openDistiller, setOpenDistiller] = useState(false);
 
-  const systems = {
+  const systems: Record<SystemKey, System> = {
     gaia: {
       name: "GAIA",
       type: "Multi-Agent Intelligence System",
@@ -141,7 +152,7 @@ export default function SystemsLab() {
               </div>
 
               {/* GAIA MODULE ABSTRACTION (SAFE SIGNAL) */}
-              {active === "gaia" && (
+              {active === "gaia" && current.meta && (
                 <div className="mt-8 text-xs text-gray-500">
                   <div className="mb-2 tracking-widest">
                     SYSTEM MODULE STRUCTURE
