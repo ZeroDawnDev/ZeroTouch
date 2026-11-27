@@ -134,7 +134,7 @@ ZeroDawn's visual identity is inspired by research interfaces, computational sys
 - System-inspired information panels
 
 ---
-
+```text
 ## `07 / Project Structure`
 
 ZeroDawn/
@@ -162,7 +162,7 @@ ZeroDawn/
 ├── lib/
 ├── package.json
 └── README.md
-
+```
 *The structure is representative and may change as the project evolves.*
 
 
