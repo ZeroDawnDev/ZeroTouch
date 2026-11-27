@@ -9,7 +9,7 @@
 
 `<br />`{=html}
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-ZeroDawn-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)]([https://YOUR-PORTFOLIO-URL](https://zero-touch-sand.vercel.app/))
+[![Portfolio](https://img.shields.io/badge/Portfolio-ZeroDawn-8B5CF6?style=for-the-badge&logo=vercel&logoColor=white)]([https://zero-touch-sand.vercel.app/])
 [![GitHub](https://img.shields.io/badge/GitHub-ZeroDawnDev-111111?style=for-the-badge&logo=github)](https://github.com/ZeroDawnDev)
 [![Built with
 Next.js](https://img.shields.io/badge/Next.js-Framework-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -193,36 +193,8 @@ ZeroDawn/
 
 *The structure is representative and may change as the project evolves.*
 
-------------------------------------------------------------------------
-
-## `08 / Run Locally`
-
-### Prerequisites
-
--   Node.js
--   npm
--   Git
-
-### Installation
-
-``` bash
-# Clone the repository
-git clone https://github.com/ZeroDawnDev/zerodawn.git
-
-# Move into the project directory
-cd zerodawn
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open **http://localhost:3000** in your browser.
 
 ------------------------------------------------------------------------
-
 ## `09 / Development Philosophy`
 
 The portfolio is built with a modular component architecture, allowing
@@ -247,11 +219,11 @@ Development priorities:
 -   [x] Systems Lab
 -   [x] GAIA architecture presentation
 -   [x] Neural Algorithm Distiller presentation
--   [ ] Research & Experiments section
--   [ ] Featured Projects section
--   [ ] GitHub integration refinement
--   [ ] Tech Stack section
--   [ ] Contact section
+-   [x] Research & Experiments section
+-   [x] Featured Projects section
+-   [x] GitHub integration refinement
+-   [x] Tech Stack section
+-   [x] Contact section
 -   [ ] Mobile refinement
 -   [ ] Performance and accessibility improvements
 
