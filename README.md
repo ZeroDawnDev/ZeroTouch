@@ -204,7 +204,6 @@ AI Research · Software Engineering · Intelligent Systems
 [![GitHub](https://img.shields.io/badge/GitHub-ZeroDawnDev-181717?style=for-the-badge&logo=github)](https://github.com/ZeroDawnDev)
 
 </div>
-------------------------------------------------------------------------
 
 <div align="center">
  ZERO DAWN
