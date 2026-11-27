@@ -137,7 +137,6 @@ ZeroDawn's visual identity is inspired by research interfaces, computational sys
 
 ## `07 / Project Structure`
 
-```text
 ZeroDawn/
 ├── app/
 │   ├── page.tsx
@@ -168,22 +167,16 @@ ZeroDawn/
 
 
 ------------------------------------------------------------------------
-## `09 / Development Philosophy`
-
-The portfolio is built with a modular component architecture, allowing
-sections and system presentations to evolve independently.
+09 / Development Philosophy
+The portfolio is built with a modular component architecture, allowing sections and system presentations to evolve independently.
 
 Development priorities:
-
--   **Modularity** --- isolate components and responsibilities
--   **Clarity** --- make technical work understandable
--   **Functionality** --- favor real data and meaningful interactions
--   **Consistency** --- maintain a coherent design system
--   **Responsiveness** --- support desktop and mobile layouts
--   **Iteration** --- continuously refine implementation and performance
-
-------------------------------------------------------------------------
-
+- Modularity — isolate components and responsibilities
+- Clarity — make technical work understandable
+- Functionality — favor real data and meaningful interactions
+- Consistency — maintain a coherent design system
+- Responsiveness — support desktop and mobile layouts
+- Iteration — continuously refine implementation and performance
 ## `10 / Roadmap`
 
 -   [x] Portfolio foundation
@@ -204,17 +197,17 @@ Development priorities:
 
 ## `11 / Connect`
 
- {align="center"}
-**Allen Adhvaith**\
+<div align = "center">
+Allen Adhvaith
 AI Research · Software Engineering · Intelligent Systems
 
 [![GitHub](https://img.shields.io/badge/GitHub-ZeroDawnDev-181717?style=for-the-badge&logo=github)](https://github.com/ZeroDawnDev)
 
-
+</div>
 ------------------------------------------------------------------------
 
-::: {align="center"}
-### ZERO DAWN
-
-*Intelligent Systems · Research · Engineering*
-:::
+<div align="center">
+ ZERO DAWN
+Intelligent Systems · Research · Engineering
+</div>
+```
