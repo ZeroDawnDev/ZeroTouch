@@ -1,4 +1,4 @@
-::: {align="center"}
+ {align="center"}
 `<img src="public/readme/zerodawn-banner.png" alt="ZeroDawn portfolio banner" width="100%" />`{=html}
 
 # ZERO DAWN
@@ -120,7 +120,7 @@ reinforcement learning and knowledge distillation.
 
 ## `05 / Tech Stack`
 
-::: {align="center"}
+ {align="center"}
 ### Frontend & Frameworks
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
@@ -231,12 +231,12 @@ Development priorities:
 
 ## `11 / Connect`
 
-::: {align="center"}
+ {align="center"}
 **Allen Adhvaith**\
 AI Research · Software Engineering · Intelligent Systems
 
 [![GitHub](https://img.shields.io/badge/GitHub-ZeroDawnDev-181717?style=for-the-badge&logo=github)](https://github.com/ZeroDawnDev)
-:::
+
 
 ------------------------------------------------------------------------
 
